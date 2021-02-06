@@ -32,7 +32,7 @@ DriveManager::DriveManager () {
     robotDrive = new frc::DifferentialDrive(*driveMotorLeft, *driveMotorRight); //object holds motor cont info and does alc for that
     //stick = new frc::Joystick{0};
     xbox = new frc::XboxController{1};
-    xboxDrive = new frc::XboxController{0}; //make sure to change other statements
+    xboxDrive = new frc::XboxController{0}; //make sure to change other statements and if statements
 
     autoTime = new frc::Timer();
 
