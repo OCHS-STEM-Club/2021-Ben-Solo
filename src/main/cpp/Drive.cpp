@@ -2,6 +2,7 @@
 #include <Robot.h>
 
 DriveManager::DriveManager () {
+
     driveMotorLeft = new rev::CANSparkMax(2, rev::CANSparkMax::MotorType::kBrushless);
     driveMotorRight = new rev::CANSparkMax(3, rev::CANSparkMax::MotorType::kBrushless);
 
@@ -20,7 +21,7 @@ DriveManager::DriveManager () {
     slaveMotorLeft1->SetSmartCurrentLimit(60);
     slaveMotorLeft2->SetSmartCurrentLimit(60);
     slaveMotorRight1->SetSmartCurrentLimit(60);
-    slaveMotorRight2->SetSmartCurrentLimit(60); 
+    slaveMotorRight2->SetSmartCurrentLimit(60);
 
     /*leftDriveEnc = new rev::CANEncoder(*driveMotorLeft); //creates encoder object
     rightDriveEnc = new rev::CANEncoder(*driveMotorRight);

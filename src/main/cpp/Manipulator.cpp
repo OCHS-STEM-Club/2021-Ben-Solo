@@ -123,7 +123,7 @@ void ManipulatorManager::manualColorSpin() {
     colorString = "G";
   } else {
     colorString = "Unknown";
-  }
+  } 
 
   frc::SmartDashboard::PutString("Detected Color", colorString);
 

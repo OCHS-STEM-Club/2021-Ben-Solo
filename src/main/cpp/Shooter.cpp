@@ -24,7 +24,7 @@ ShooterManager::ShooterManager () {
     //currentEncoderState = hoodEncoder->Get();
     //hoodCount = new frc::Counter(hoodEncoder);
 
-    hoodPotent = new frc::AnalogPotentiometer(1, 1000, 0); //3600
+    hoodPotent = new frc::AnalogPotentiometer(1, 1, 0); //3600
 }
 
 void ShooterManager::shoot(double velocityIn, double enabled) {
