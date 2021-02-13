@@ -90,6 +90,12 @@ void ManipulatorManager::manualColorSpin() {
     colorString = "Green";
   } else if (matchedColor == kYellowTarget) {
     colorString = "Yellow";
+  } else if (matchedColor == kPurpleTarget) {
+    colorString = "Purple";
+  } else if (matchedColor == kDarkGreyTileTarget) {
+    colorString = "DarkGreyTile";
+  } else if (matchedColor == kLightGreyTileTarget) {
+    colorString = "LightGreyTile";
   } else {
     colorString = "Unknown";
   }
