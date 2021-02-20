@@ -176,7 +176,10 @@ void Robot::TeleopPeriodic() {
   //climbManager->climbTest();
 }
 
-void Robot::TestPeriodic() {}
+void Robot::TestPeriodic() {
+  frc::SmartDashboard::PutNumber("hood position want", 86.0);
+}
+
 
 #ifndef RUNNING_FRC_TESTS
 int main() { return frc::StartRobot<Robot>(); }

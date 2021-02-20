@@ -18,13 +18,14 @@ ShooterManager::ShooterManager () {
 
     hoodMotor = new WPI_TalonSRX(14);
 
+
     feederMotor = new WPI_TalonSRX(13);
     xbox = new frc::XboxController{1};
     //hoodEncoder = new frc::DigitalInput(0);
     //currentEncoderState = hoodEncoder->Get();
     //hoodCount = new frc::Counter(hoodEncoder);
 
-    hoodPotent = new frc::AnalogPotentiometer(1, 1, 0); //3600
+    hoodPotent = new frc::AnalogPotentiometer(1, 180, 0); //3600
 }
 
 void ShooterManager::shoot(double velocityIn, double enabled) {
@@ -54,25 +55,17 @@ void ShooterManager::shoot(double velocityIn, double enabled) {
 }
 
 void ShooterManager::hoodRotate(double hoodPositionWant){
-    /*if (currentEncoderState != hoodEncoder->Get()){
-        if (hoodMotor->Get() > 0){
-            hoodEncoderCount++;
-        }
-        else {
-            hoodEncoderCount--;
-        }
-        currentEncoderState = hoodEncoder->Get();
-    }*/
-    
+   
+
     hoodPosition = hoodPotent->Get();
-    hoodMotor->Set((hoodPositionWant -hoodPosition) * 0.05);
+    hoodMotor->Set((hoodPosition - hoodPositionWant) * 0.05);
 }
 
 void ShooterManager::shootTest(double in) {
 
 
     //hoodMotor->Set(xbox->GetRawAxis(1));
-    if (xbox->GetRawAxis(2) > 0.9) {
+    /*if (xbox->GetRawAxis(2) > 0.9) {
         hoodMotor->Set(0.5);
     }
     else if (xbox->GetRawAxis(3) > 0.9) {
@@ -80,9 +73,12 @@ void ShooterManager::shootTest(double in) {
     }
     else {
         hoodMotor->Set(0);
-    }
+    }*/
 
     frc::SmartDashboard::PutNumber("hood position", hoodPotent->Get());
+
+    hoodPositionWant = frc::SmartDashboard::GetNumber("hood position want", 86.0);
+    hoodRotate(hoodPositionWant);
 
     velocityWant = frc::SmartDashboard::GetNumber("shoot position", 87500); //97000
 
