@@ -78,7 +78,7 @@ void ManipulatorManager::manualColorSpin() {
     frc::Color detectedColor = m_colorSensor.GetColor();
 
 
-  std::string colorString;
+  //extern std::string colorString; //i know stuff
   double confidence = 0.0;
   frc::Color matchedColor = m_colorMatcher.MatchClosestColor(detectedColor, confidence);
 
@@ -289,7 +289,7 @@ void ManipulatorManager::intake() {
   frc::SmartDashboard::PutNumber("rotate control mode", rotateControlMode);
 }
 
-void ManipulatorManager::linearActuator() {
+/*void ManipulatorManager::linearActuator() {
   if (xbox->GetRawButton(5)) {
     //linActuator->SetSpeed(1);
     linActuator->SetPosition(0);
@@ -302,7 +302,7 @@ void ManipulatorManager::linearActuator() {
     //linActuator->SetSpeed(0);
     //linActuator->SetDisabled();
   //}
-}
+}*/
 
 void ManipulatorManager::intakeTest() {
   intakeSpinMotor->Set(0.5 * deadbandM(xbox->GetRawAxis(1), 0.2));

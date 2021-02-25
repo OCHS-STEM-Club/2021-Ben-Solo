@@ -75,12 +75,20 @@ void ShooterManager::shootTest(double in) {
         hoodMotor->Set(0);
     }*/
 
+    if (xbox->GetRawButton(6)) {
+        if (colorString = "Green"){
+
+        }
+        
+    }
+
+    hoodPositionWant = frc::SmartDashboard::GetNumber("hood want green", 86.0);
     frc::SmartDashboard::PutNumber("hood position", hoodPotent->Get());
 
-    hoodPositionWant = frc::SmartDashboard::GetNumber("hood position want", 86.0);
+    //hoodPositionWant = frc::SmartDashboard::GetNumber("hood position want", 86.0);
     hoodRotate(hoodPositionWant);
 
-    velocityWant = frc::SmartDashboard::GetNumber("shoot position", 87500); //97000
+    velocityWant = frc::SmartDashboard::GetNumber("shoot position", 87500); //97000 From the SmartDashboard gets shoot position no
 
     if (xbox->GetRawButton(4)) {
        //shootMotor->Set((velocityWant * 1.0) / -120000.0);
