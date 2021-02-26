@@ -78,7 +78,7 @@ void ManipulatorManager::manualColorSpin() {
     frc::Color detectedColor = m_colorSensor.GetColor();
 
 
-  //extern std::string colorString; //i know stuff
+  extern std::string colorString; //i know stuff
   double confidence = 0.0;
   frc::Color matchedColor = m_colorMatcher.MatchClosestColor(detectedColor, confidence);
 

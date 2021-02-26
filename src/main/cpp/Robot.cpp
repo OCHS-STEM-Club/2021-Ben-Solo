@@ -13,6 +13,7 @@
 
 bool intakeRotateStart = true;
 int autoStep = 0;
+extern std::string colorString = "";
 
 Robot::Robot() {
   manipulatorManager = new ManipulatorManager();
@@ -128,7 +129,7 @@ void Robot::TeleopInit() {
 } //Initalize Teleop
 
 void Robot::TeleopPeriodic() {
-  manipulatorManager->linearActuator();
+  //manipulatorManager->linearActuator();
 
   if (xbox->GetRawButton(7)) {
     //manipulatorManager->colorFinder();

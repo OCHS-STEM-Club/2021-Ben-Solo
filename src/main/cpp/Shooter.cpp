@@ -75,12 +75,12 @@ void ShooterManager::shootTest(double in) {
         hoodMotor->Set(0);
     }*/
 
-    if (xbox->GetRawButton(6)) {
+   /* if (xbox->GetRawButton(6)) {
         if (colorString = "Green"){
 
         }
         
-    }
+    }*/
 
     hoodPositionWant = frc::SmartDashboard::GetNumber("hood want green", 86.0);
     frc::SmartDashboard::PutNumber("hood position", hoodPotent->Get());
