@@ -26,6 +26,7 @@
 extern bool intakeRotateStart;
 extern bool intakeRotateStartCompleted;
 extern int autoStep;
+extern std::string colorString;
 
 class Robot : public frc::TimedRobot {
  public:
