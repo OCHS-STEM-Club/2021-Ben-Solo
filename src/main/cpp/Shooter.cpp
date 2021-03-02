@@ -75,6 +75,7 @@ void ShooterManager::shootTest(double in) {
         hoodMotor->Set(0);
     }*/
 
+//shooter based on current color
     if (xbox->GetRawButton(6)) {
         if (colorString == "Green"){
             hoodPositionWant = 89;
