@@ -75,7 +75,7 @@ void ShooterManager::shootTest(double in) {
         hoodMotor->Set(0);
     }*/
 
-    if (xbox->GetRawButton(6)) {
+    if (xbox->GetRawButton(6)) { //Color based shooting statements
         if (colorString == "Green"){
             hoodPositionWant = 89;
             velocityWant = 119,000;
