@@ -65,7 +65,7 @@ void ShooterManager::shootTest(double in) {
 
 
     //hoodMotor->Set(xbox->GetRawAxis(1));
-    /*if (xbox->GetRawAxis(2) > 0.9) {
+    if (xbox->GetRawAxis(2) > 0.9) {
         hoodMotor->Set(0.5);
     }
     else if (xbox->GetRawAxis(3) > 0.9) {
@@ -73,31 +73,59 @@ void ShooterManager::shootTest(double in) {
     }
     else {
         hoodMotor->Set(0);
-    }*/
+    }
 
     if (xbox->GetRawButton(6)) { //Color based shooting statements
         if (colorString == "Green"){
             hoodPositionWant = 89;
             velocityWant = 119,000;
+           
+            if (velocityAct > 119,000){
+                feederMotor->Set(-0.8);
+            }
+            else{
+                feederMotor->Set(0);
+            }
         }
         else if (colorString == "Yellow"){
             hoodPositionWant = 68.5;
             velocityWant = 119,000;    
+            
+            if (velocityAct > 119,000){
+                feederMotor->Set(-0.8);
+            }
+            else{
+                feederMotor->Set(0);
+            }
         }
          else if (colorString == "Blue"){
             hoodPositionWant = 51.2;
             velocityWant = 119,000;
+
+            if (velocityAct > 119,000){
+                feederMotor->Set(-0.8);
+            }
+            else{
+                feederMotor->Set(0);
+            }
         }
          else if (colorString == "Red"){
             hoodPositionWant = 41.7;
             velocityWant = 119,000;
+
+            if (velocityAct > 119,000){
+                feederMotor->Set(-0.8);
+            }
+            else{
+                feederMotor->Set(0);
+            }
         }
     }
 
     //hoodPositionWant = frc::SmartDashboard::GetNumber("hood want green", 86.0);
     frc::SmartDashboard::PutNumber("hood position", hoodPotent->Get());
 
-    hoodPositionWant = frc::SmartDashboard::GetNumber("hood position want", 86.0);
+    //hoodPositionWant = frc::SmartDashboard::GetNumber("hood position want", 86.0);
     hoodRotate(hoodPositionWant);
 
     //velocityWant = frc::SmartDashboard::GetNumber("shoot position", 87500); //97000 From the SmartDashboard gets shoot position no
