@@ -15,7 +15,8 @@
 
 class VisionManager { //Creates vision manager object
 private: //Only the vision subclass can effect
-frc::Joystick *stick;
+//frc::Joystick *stick;
+frc::XboxController *xbox;
 
 bool imageToggle = true; //bool = true or false
 bool imageSwitch = false;

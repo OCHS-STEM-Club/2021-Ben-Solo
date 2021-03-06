@@ -1,7 +1,8 @@
 #include <vision.hpp>
 
 VisionManager::VisionManager () { //Finish initionalizing
-  stick = new frc::Joystick{0};
+  //stick = new frc::Joystick{0};
+  xbox = new frc::XboxController{0};
   led = new frc::AddressableLED{8};
   led->SetLength(LED_LENGTH);
   led->Start();
@@ -65,12 +66,16 @@ void VisionManager::display() {
   frc::SmartDashboard::PutNumber("ta", targetArea);
   frc::SmartDashboard::PutNumber("ts", targetSkew);
 
-  if (stick->GetRawButton(4) && imageToggle) {
+  /*if (stick->GetRawButton(4) && imageToggle) {
     imageSwitch = !imageSwitch;
     imageToggle = false;
   }
   else if (!stick->GetRawButton(4)) {
     imageToggle = true;
+  }*/
+
+  if (xbox->GetRawButtonPressed(7)) {
+    imageSwitch = !imageSwitch;
   }
 
   if (imageSwitch) {

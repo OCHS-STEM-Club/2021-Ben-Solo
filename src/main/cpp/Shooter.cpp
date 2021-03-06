@@ -58,7 +58,7 @@ void ShooterManager::hoodRotate(double hoodPositionWant){
    
 
     hoodPosition = hoodPotent->Get();
-    hoodMotor->Set((hoodPosition - hoodPositionWant) * 0.05);
+    hoodMotor->Set((hoodPosition - hoodPositionWant) * 0.055);
 }
 
 void ShooterManager::shootTest(double in) {
@@ -75,12 +75,14 @@ void ShooterManager::shootTest(double in) {
         hoodMotor->Set(0);
     }
 
+    velocityAct = shootMotor->GetSensorCollection().GetQuadratureVelocity();
+
     if (xbox->GetRawButton(6)) { //Color based shooting statements
         if (colorString == "Green"){
-            hoodPositionWant = 89;
-            velocityWant = 119,000;
+            hoodPositionWant = 69;
+            velocityWant = 136000;
            
-            if (velocityAct > 119,000){
+            if (velocityAct < -119000 && velocityAct > -122000){
                 feederMotor->Set(-0.8);
             }
             else{
@@ -88,10 +90,10 @@ void ShooterManager::shootTest(double in) {
             }
         }
         else if (colorString == "Yellow"){
-            hoodPositionWant = 68.5;
-            velocityWant = 119,000;    
+            hoodPositionWant = 48.5;
+            velocityWant = 136000;    
             
-            if (velocityAct > 119,000){
+            if (velocityAct < -119000 && velocityAct > -122000){
                 feederMotor->Set(-0.8);
             }
             else{
@@ -99,10 +101,10 @@ void ShooterManager::shootTest(double in) {
             }
         }
          else if (colorString == "Blue"){
-            hoodPositionWant = 51.2;
-            velocityWant = 119,000;
+            hoodPositionWant = 30.0;
+            velocityWant = 135000;
 
-            if (velocityAct > 119,000){
+            if (velocityAct < -117500 && velocityAct > -121000){
                 feederMotor->Set(-0.8);
             }
             else{
@@ -110,16 +112,23 @@ void ShooterManager::shootTest(double in) {
             }
         }
          else if (colorString == "Red"){
-            hoodPositionWant = 41.7;
-            velocityWant = 119,000;
+            hoodPositionWant = 46.7;
+            velocityWant = 136000;
 
-            if (velocityAct > 119,000){
+            if (velocityAct < -119000 && velocityAct > -122000){
                 feederMotor->Set(-0.8);
             }
             else{
                 feederMotor->Set(0);
             }
         }
+
+        shootMotor->Set(ControlMode::Velocity, -velocityWant);
+        //shootMotor->Set(ControlMode::Velocity, -119000);
+
+    }
+    else {
+        feederMotor->Set(0);
     }
 
     //hoodPositionWant = frc::SmartDashboard::GetNumber("hood want green", 86.0);
@@ -128,10 +137,9 @@ void ShooterManager::shootTest(double in) {
     //hoodPositionWant = frc::SmartDashboard::GetNumber("hood position want", 86.0);
     hoodRotate(hoodPositionWant);
 
-    //velocityWant = frc::SmartDashboard::GetNumber("shoot position", 87500); //97000 From the SmartDashboard gets shoot position no
-
     if (xbox->GetRawButton(4)) {
        //shootMotor->Set((velocityWant * 1.0) / -120000.0);
+       velocityWant = frc::SmartDashboard::GetNumber("shoot position", 87500); //97000 From the SmartDashboard gets shoot position no
        shootMotor->Set(ControlMode::Velocity, -velocityWant);
     }
     else if (xbox->GetRawButton(8)) {
@@ -167,12 +175,12 @@ void ShooterManager::shootTest(double in) {
         }
     }*/
 
-    if (xbox->GetPOV() == 0) {
+   /* if (xbox->GetPOV() == 0) {
         feederMotor->Set(-0.8);
     }
     else {
         feederMotor->Set(0);
-    }
+    }*/
 }
 
 void ShooterManager::shootAuto(bool doShoot) {

@@ -20,7 +20,7 @@ class ShooterManager {
 
     double velocityOut;
     double velocityAct;
-    double hoodPositionWant;
+    double hoodPositionWant = 69;
     //bool currentEncoderState;
     //int hoodEncoderCount = 0;
     int hoodPosition;

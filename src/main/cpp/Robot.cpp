@@ -25,6 +25,7 @@ Robot::Robot() {
 }  
 
 frc::Joystick *stick; //Initialzing the joystick
+
 frc::XboxController *xbox;
 frc::Timer *timer;
 
@@ -140,32 +141,33 @@ void Robot::TeleopPeriodic() {
   //else if (stick->GetRawButton(8)){
   //  manipulatorManager->countSpinsEnc();
   //}
-  else {
+ // else {
     manipulatorManager->manualColorSpin();
     //manipulatorManager->stopWheel();
-  }
+  //}
 
   visionManager->display(); //runs vision manager once teleop starts
   //visionManager->distance(); //runs vision manager once teleop starts
   
-  if (!stick->GetRawButton(12) && !stick->GetRawButton(11)) {
+  //if (!stick->GetRawButton(12) && !stick->GetRawButton(11)) {
+    if (!xbox->GetRawButton(5)){
 		driveManager->drive();//0, 0, false);
     //shooterManager->shoot(0, false);
 	}
-  else if (stick->GetRawButton(11)) {
+  /*else if (stick->GetRawButton(11)) {
     visionTurn = visionManager->trackTurn();
     visionMove = visionManager->trackMove();
 
     driveManager->subclassTurn(visionTurn, visionMove);
-  }
+  }*/
 	else {
 		visionTurn = visionManager->trackTurn();
     visionMove = visionManager->trackMove();
     //visionRPM = ?;
 
     //driveManager->driveTrain(visionMove, visionTurn, true);
-    driveManager->subclassTurn(visionTurn, -(0.5 * stick->GetRawAxis(1)));
-    //driveManager->subclassTurn(visionTurn, visionMove);
+    //driveManager->subclassTurn(visionTurn, -(0.5 * stick->GetRawAxis(1)));
+    driveManager->subclassTurn(visionTurn, 0);
     //shooterManager->shoot(visionRPM, true);
 	}
   
@@ -179,6 +181,7 @@ void Robot::TeleopPeriodic() {
 
 void Robot::TestPeriodic() {
   frc::SmartDashboard::PutNumber("hood position want", 86.0);
+  frc::SmartDashboard::PutNumber("shoot position", 87500);
 }
 
 
