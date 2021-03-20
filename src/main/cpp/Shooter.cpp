@@ -79,7 +79,7 @@ void ShooterManager::shootTest(double in) {
 
     if (xbox->GetRawButton(6)) { //Color based shooting statements
         if (colorString == "Green"){
-            hoodPositionWant = 69;
+            hoodPositionWant = 49;
             velocityWant = 136000;
            
             if (velocityAct < -119000 && velocityAct > -122000){
@@ -90,7 +90,7 @@ void ShooterManager::shootTest(double in) {
             }
         }
         else if (colorString == "Yellow"){
-            hoodPositionWant = 48.5;
+            hoodPositionWant = 23.5;
             velocityWant = 125000;    
             
             if (velocityAct < -105000 && velocityAct > -122000){
@@ -101,8 +101,8 @@ void ShooterManager::shootTest(double in) {
             }
         }
          else if (colorString == "Blue"){
-            hoodPositionWant = 22.0;
-            velocityWant = 130000;
+            hoodPositionWant = 18.0;
+            velocityWant = 128000;
 
             if (velocityAct < -110000 && velocityAct > -117000){
                 feederMotor->Set(-0.8);
@@ -112,10 +112,10 @@ void ShooterManager::shootTest(double in) {
             }
         }
          else if (colorString == "Red"){
-            hoodPositionWant = 46.7;
+            hoodPositionWant = 30.2;
             velocityWant = 136000;
 
-            if (velocityAct < -119000 && velocityAct > -122000){
+            if (velocityAct < -116000 && velocityAct > -122000){
                 feederMotor->Set(-0.8);
             }
             else{
