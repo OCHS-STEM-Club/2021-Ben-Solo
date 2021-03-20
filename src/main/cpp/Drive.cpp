@@ -72,8 +72,8 @@ double deadband(double joystickValue, double deadbandValue) { //colins special p
 void DriveManager::drive() {
     //xStickValue = -deadband(stick->GetRawAxis(1), 0.2); //getting raw axis values
     //yStickValue = deadband(stick->GetRawAxis(2), 0.2);
-    xStickValue = -xboxDrive->GetRawAxis(1) *0.6;
-    yStickValue = xboxDrive->GetRawAxis(4) *0.6;
+    xStickValue = -xboxDrive->GetRawAxis(1) *0.8;
+    yStickValue = xboxDrive->GetRawAxis(4) *0.7;
 
     /*if(stick->GetRawButton(1)){
       xStickValue *= 0.70;

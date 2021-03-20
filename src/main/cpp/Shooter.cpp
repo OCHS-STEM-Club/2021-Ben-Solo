@@ -104,7 +104,7 @@ void ShooterManager::shootTest(double in) {
             hoodPositionWant = 30.0;
             velocityWant = 135000;
 
-            if (velocityAct < -115000 && velocityAct > -117000){
+            if (velocityAct < -113000 && velocityAct > -117000){
                 feederMotor->Set(-0.8);
             }
             else{
