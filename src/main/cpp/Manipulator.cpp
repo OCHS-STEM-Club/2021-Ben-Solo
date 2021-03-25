@@ -2,10 +2,10 @@
 #include <Robot.h>
 
 ManipulatorManager::ManipulatorManager () {
-  m_colorMatcher.AddColorMatch(kBlueTarget);
-  m_colorMatcher.AddColorMatch(kGreenTarget);
-  m_colorMatcher.AddColorMatch(kRedTarget);
-  m_colorMatcher.AddColorMatch(kYellowTarget);
+  m_colorMatcher.AddColorMatch(BLUE_TARGET);
+  m_colorMatcher.AddColorMatch(GREEN_TARGET);
+  m_colorMatcher.AddColorMatch(RED_TARGET);
+  m_colorMatcher.AddColorMatch(YELLOW_TARGET);
 
   stick = new frc::Joystick{0};
   xbox = new frc::XboxController{1};
@@ -82,19 +82,19 @@ void ManipulatorManager::manualColorSpin() {
   double confidence = 0.0;
   frc::Color matchedColor = m_colorMatcher.MatchClosestColor(detectedColor, confidence);
 
-  if (matchedColor == kBlueTarget) {
+  if (matchedColor == BLUE_TARGET) {
     colorString = "Blue";
-  } else if (matchedColor == kRedTarget) {
+  } else if (matchedColor == RED_TARGET) {
     colorString = "Red";
-  } else if (matchedColor == kGreenTarget) {
+  } else if (matchedColor == GREEN_TARGET) {
     colorString = "Green";
-  } else if (matchedColor == kYellowTarget) {
+  } else if (matchedColor == YELLOW_TARGET) {
     colorString = "Yellow";
-  } else if (matchedColor == kPurpleTarget) {
+  } else if (matchedColor == PURPLE_TARGET) {
     colorString = "Purple";
-  } else if (matchedColor == kDarkGreyTileTarget) {
+  } else if (matchedColor == DARKGREY_TARGET) {
     colorString = "DarkGreyTile";
-  } else if (matchedColor == kLightGreyTileTarget) {
+  } else if (matchedColor == LIGHTGREY_TARGET) {
     colorString = "LightGreyTile";
   } else {
     colorString = "Unknown";
@@ -119,7 +119,7 @@ void ManipulatorManager::manualColorSpin() {
   double confidence = 0.0;
   frc::Color matchedColor = m_colorMatcher.MatchClosestColor(detectedColor, confidence);
 
-  if (matchedColor == kBlueTarget) {
+  if (matchedColor == BLUE_TARGET) {
     colorString = "R";
   } else if (matchedColor == kRedTarget) {
     colorString = "B";
@@ -150,7 +150,7 @@ void ManipulatorManager::countSpins() {
   double confidence = 0.0;
   frc::Color matchedColor = m_colorMatcher.MatchClosestColor(detectedColor, confidence);
 
-  if (matchedColor == kBlueTarget) {
+  if (matchedColor == BLUE_TARGET) {
     colorString = "B";
   } else if (matchedColor == kRedTarget) {
     colorString = "R";

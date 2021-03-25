@@ -13,18 +13,18 @@ class ManipulatorManager {
 private:
     rev::ColorSensorV3 m_colorSensor{frc::I2C::Port::kOnboard};
     rev::ColorMatch m_colorMatcher;
-    /*static constexpr frc::Color kBlueTarget = frc::Color(0.143, 0.427, 0.429); //defult colors given by first
-    static constexpr frc::Color kGreenTarget = frc::Color(0.197, 0.561, 0.240);
-    static constexpr frc::Color kRedTarget = frc::Color(0.561, 0.232, 0.114);
-    static constexpr frc::Color kYellowTarget = frc::Color(0.361, 0.524, 0.113); */
+    /*static constexpr frc::Color BLUE_TARGET = frc::Color(0.143, 0.427, 0.429); //defult colors given by first
+    static constexpr frc::Color GREEN_TARGET = frc::Color(0.197, 0.561, 0.240);
+    static constexpr frc::Color RED_TARGET = frc::Color(0.561, 0.232, 0.114);
+    static constexpr frc::Color YELLOW_TARGET = frc::Color(0.361, 0.524, 0.113); */
 
-    static constexpr frc::Color kGreenTarget = frc::Color(0.200, 0.540, 0.260);
-    static constexpr frc::Color kYellowTarget = frc::Color(0.350, 0.560, 0.090);
-    static constexpr frc::Color kBlueTarget = frc::Color(0.120, 0.320, 0.560); 
-    static constexpr frc::Color kRedTarget = frc::Color(0.570, 0.340, 0.100);
-    static constexpr frc::Color kPurpleTarget = frc::Color(0.30, 0.360, 0.340);
-    static constexpr frc::Color kDarkGreyTileTarget = frc::Color(0, 0, 0);
-    static constexpr frc::Color kLightGreyTileTarget = frc::Color(0, 0, 0);
+    static constexpr frc::Color GREEN_TARGET = frc::Color(0.186, 0.531, 0.282);
+    static constexpr frc::Color YELLOW_TARGET = frc::Color(0.330, 0.540, 0.130);
+    static constexpr frc::Color BLUE_TARGET = frc::Color(0.216, 0.434, 0.349); 
+    static constexpr frc::Color RED_TARGET = frc::Color(0.453, 0.381, 0.175);
+    static constexpr frc::Color PURPLE_TARGET = frc::Color(0.333, 0.359, 0.307);
+    static constexpr frc::Color DARKGREY_TARGET = frc::Color(0, 0, 0);
+    static constexpr frc::Color LIGHTGREY_TARGET = frc::Color(0, 0, 0);
     
 
     frc::Joystick *stick;
