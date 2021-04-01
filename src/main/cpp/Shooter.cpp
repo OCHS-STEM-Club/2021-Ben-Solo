@@ -80,7 +80,7 @@ void ShooterManager::shootTest(double in) {
     if (xbox->GetRawButton(6)) { //Color based shooting statements
         if (colorString == "Green"){
             hoodPositionWant = 49;
-            velocityWant = 136000;
+            velocityWant = 139000; // 3/26 136,000 start
            
             if (velocityAct < -119000 && velocityAct > -122000){
                 feederMotor->Set(-0.8);
@@ -90,10 +90,10 @@ void ShooterManager::shootTest(double in) {
             }
         }
         else if (colorString == "Yellow"){
-            hoodPositionWant = 21.5;
-            velocityWant = 125000;    
+            hoodPositionWant = 19.5; //changes hood angle if holding button
+            velocityWant = 125000; //Sets target velocity of shooter must be higher than wanted for error    
             
-            if (velocityAct < -105000 && velocityAct > -122000){
+            if (velocityAct < -105000 && velocityAct > -122000){ //Spins feeder wheel if shooter is spinning fast enough
                 feederMotor->Set(-0.8);
             }
             else{
@@ -102,9 +102,9 @@ void ShooterManager::shootTest(double in) {
         }
          else if (colorString == "Blue"){
             hoodPositionWant = 18.0;
-            velocityWant = 128000;
+            velocityWant = 127000;
 
-            if (velocityAct < -110000 && velocityAct > -117000){
+            if (velocityAct < -109000 && velocityAct > -117000){
                 feederMotor->Set(-0.8);
             }
             else{
@@ -135,7 +135,7 @@ void ShooterManager::shootTest(double in) {
     frc::SmartDashboard::PutNumber("hood position", hoodPotent->Get());
 
     //hoodPositionWant = frc::SmartDashboard::GetNumber("hood position want", 86.0);
-    hoodRotate(hoodPositionWant);
+    hoodRotate(hoodPositionWant); //comment out this line for manual hood control auto shoot will not work
 
     if (xbox->GetRawButton(4)) {
        //shootMotor->Set((velocityWant * 1.0) / -120000.0);
