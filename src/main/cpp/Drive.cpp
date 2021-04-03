@@ -142,8 +142,8 @@ void DriveManager::drive() {
 }
 
 void DriveManager::subclassTurn(double turnValue, double moveValue) { //allows different subclass to access drive system to turn robot (Ex vision tracking turns robot)
-    //robotDrive->ArcadeDrive(moveValue, turnValue);
-    robotDrive->ArcadeDrive(-xboxDrive->GetRawAxis(1) *0.6, turnValue);
+    robotDrive->ArcadeDrive(moveValue, turnValue);
+  //  robotDrive->ArcadeDrive(-xboxDrive->GetRawAxis(1) *0.6, turnValue);
 }
 
 double distanceToRev(double in){

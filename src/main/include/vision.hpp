@@ -6,9 +6,9 @@
 #include <frc/AddressableLED.h>
 
 #define AREA_DISTANCE_RATIO 4.1823379 //2.11249
-#define MAX_STEER 0.4 // the maximum value sent to steer the robot
-#define STEER_K 0.065 //0.175 .15
-#define DRIVE_K 1.35
+#define MAX_STEER 0.3 // the maximum value sent to steer the robot
+#define STEER_K 0.075 //0.175 .15
+#define DRIVE_K 1.75
 #define MAX_DRIVE 0.5
 
 #define LED_LENGTH 6

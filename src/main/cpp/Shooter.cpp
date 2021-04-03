@@ -90,10 +90,10 @@ void ShooterManager::shootTest(double in) {
             }
         }
         else if (colorString == "Yellow"){
-            hoodPositionWant = 19.5; //changes hood angle if holding button
-            velocityWant = 125000; //Sets target velocity of shooter must be higher than wanted for error    
+            hoodPositionWant = 20.5; //changes hood angle if holding button
+            velocityWant = 123000; //Sets target velocity of shooter must be higher than wanted for error    
             
-            if (velocityAct < -105000 && velocityAct > -122000){ //Spins feeder wheel if shooter is spinning fast enough
+            if (velocityAct < -107000 && velocityAct > -122000){ //Spins feeder wheel if shooter is spinning fast enough
                 feederMotor->Set(-0.8);
             }
             else{
@@ -101,7 +101,7 @@ void ShooterManager::shootTest(double in) {
             }
         }
          else if (colorString == "Blue"){
-            hoodPositionWant = 18.0;
+            hoodPositionWant = 15.5;
             velocityWant = 127000;
 
             if (velocityAct < -109000 && velocityAct > -117000){
@@ -112,10 +112,10 @@ void ShooterManager::shootTest(double in) {
             }
         }
          else if (colorString == "Red"){
-            hoodPositionWant = 21.0;
-            velocityWant = 135000;
+            hoodPositionWant = 27.0;
+            velocityWant = 130000;
 
-            if (velocityAct < -116000 && velocityAct > -122000){
+            if (velocityAct < -114000 && velocityAct > -122000){
                 feederMotor->Set(-0.8);
             }
             else{

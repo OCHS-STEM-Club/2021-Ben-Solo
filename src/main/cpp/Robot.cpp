@@ -24,8 +24,9 @@ Robot::Robot() {
   autoManager = new AutoManager(driveManager, manipulatorManager, shooterManager);
 }  
 
-frc::Joystick *stick; //Initialzing the joystick
+//frc::Joystick *stick; //Initialzing the joystick
 
+frc::XboxController *xboxDrive;
 frc::XboxController *xbox;
 frc::Timer *timer;
 
@@ -39,8 +40,9 @@ void Robot::RobotInit() {
   m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
   frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
 
-  stick = new frc::Joystick{0}; //Assigning the joystick to USB port 0 on the driver station
+  //stick = new frc::Joystick{0}; //Assigning the joystick to USB port 0 on the driver station
   xbox = new frc::XboxController{1};
+  xboxDrive = new frc::XboxController{0};
   timer = new frc::Timer();
 
 }
@@ -150,7 +152,7 @@ void Robot::TeleopPeriodic() {
   //visionManager->distance(); //runs vision manager once teleop starts
   
   //if (!stick->GetRawButton(12) && !stick->GetRawButton(11)) {
-    if (!xbox->GetRawButton(5)){
+    if (!xboxDrive->GetRawButton(5)){
 		driveManager->drive();//0, 0, false);
     //shooterManager->shoot(0, false);
 	}
@@ -165,9 +167,9 @@ void Robot::TeleopPeriodic() {
     visionMove = visionManager->trackMove();
     //visionRPM = ?;
 
-    //driveManager->driveTrain(visionMove, visionTurn, true);
+    driveManager->subclassTurn(visionTurn, visionMove);
     //driveManager->subclassTurn(visionTurn, -(0.5 * stick->GetRawAxis(1)));
-    driveManager->subclassTurn(visionTurn, 0);
+    //driveManager->subclassTurn(visionTurn, 0);
     //shooterManager->shoot(visionRPM, true);
 	}
   

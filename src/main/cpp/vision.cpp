@@ -139,6 +139,7 @@ double VisionManager::trackTurn() {
   if (tv == 1) {
     turnOutput = targetOffsetAngle_Horizontal * STEER_K; //or divid by max value (27 degrees)
     turnOutput = clamp(turnOutput,-MAX_STEER,MAX_STEER);
+    frc::SmartDashboard::PutNumber("turn output", turnOutput);
     return turnOutput;
   }
   else {
@@ -151,7 +152,8 @@ double VisionManager::trackMove() {
   double targetArea = table->GetNumber("ta",0.0);
   double tv = table->GetNumber("tv",0.0);
 
-  moveWant = frc::SmartDashboard::GetNumber("ta want", 2.34);
+  //moveWant = frc::SmartDashboard::GetNumber("ta want", 1.87); //old was 2.34
+  moveWant = 0.99; //yellow 1.87
 
   if (tv == 1) {
     moveOutput = (targetArea - moveWant) * DRIVE_K;
