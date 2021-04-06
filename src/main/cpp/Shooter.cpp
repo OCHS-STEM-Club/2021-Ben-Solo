@@ -102,9 +102,9 @@ void ShooterManager::shootTest(double in) {
         }
          else if (colorString == "Blue"){
             hoodPositionWant = 15.5;
-            velocityWant = 127000;
+            velocityWant = 125000;
 
-            if (velocityAct < -109000 && velocityAct > -117000){
+            if (velocityAct < -110000 && velocityAct > -117000){
                 feederMotor->Set(-0.8);
             }
             else{

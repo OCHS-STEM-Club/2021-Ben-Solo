@@ -73,7 +73,7 @@ void DriveManager::drive() {
     //xStickValue = -deadband(stick->GetRawAxis(1), 0.2); //getting raw axis values
     //yStickValue = deadband(stick->GetRawAxis(2), 0.2);
     xStickValue = -xboxDrive->GetRawAxis(1);
-    yStickValue = xboxDrive->GetRawAxis(4) *0.58; //.67
+    yStickValue = xboxDrive->GetRawAxis(4) *0.63; //.67
 
     /*if(stick->GetRawButton(1)){
       xStickValue *= 0.70;
