@@ -80,7 +80,7 @@ void DriveManager::drive() {
       yStickValue *= 0.55;
     }*/
     if (xboxDrive->GetRawAxis(3) > 0.9) {
-      xStickValue *= 0.80;
+      xStickValue *= 0.90; //Go full speed please
       //yStickValue *= 0.67;
     }
 

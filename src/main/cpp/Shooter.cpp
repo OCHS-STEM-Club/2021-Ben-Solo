@@ -102,7 +102,7 @@ void ShooterManager::shootTest(double in) {
         }
          else if (colorString == "Blue"){
             hoodPositionWant = 15.5;
-            velocityWant = 125000;
+            velocityWant = 126000;
 
             if (velocityAct < -110000 && velocityAct > -117000){
                 feederMotor->Set(-0.8);
@@ -129,6 +129,10 @@ void ShooterManager::shootTest(double in) {
     }
     else {
         feederMotor->Set(0);
+    }
+
+    if (xbox->GetRawButton(5)) {
+        hoodPositionWant = 30.0;
     }
 
     //hoodPositionWant = frc::SmartDashboard::GetNumber("hood want green", 86.0);
